@@ -1,1 +1,39 @@
-Foo Bar
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" routerLink="/">Inicio</a>
+    
+    <!-- Links -->
+    <ul class="navbar-nav">
+	<li class="nav-item">
+	    <a class="nav-link" href="#">Mi espacio</a>
+	</li>
+	<li class="nav-item">
+	    <a class="nav-link" href="#">Publicar</a>
+	</li>
+	
+	<!-- Dropdown -->
+	<li class="nav-item dropdown">
+	    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+		Filtrar
+	    </a>
+	    <div class="dropdown-menu">
+		<a class="dropdown-item" href="#">Globalmente</a>
+		<a class="dropdown-item" href="#">Regionalmente</a>
+		<a class="dropdown-item" href="#">Localmente</a>
+	    </div>
+	</li>
+    </ul>
+    
+    <form class="form-inline; navbar-nav ml-auto">
+	<div class="input-group">
+	    <div class="input-group-prepend">
+		<span class="input-group-text">
+		    <!-- TODO: Esta imagen debe de ser una imagen ya con la dimension correcta desde la fuente  -->
+		    <img style="width:25px; height:25px" src="https://img00.deviantart.net/2c38/i/2012/287/8/d/spideypool_logo_by_irocandrew-d5hqgr9.png">
+		</span>
+	    </div>
+	    <input type="text" class="form-control" placeholder="Hashtag populares">
+	</div>    
+    </form>
+</nav>
+<router-outlet></router-outlet>
