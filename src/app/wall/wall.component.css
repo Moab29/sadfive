@@ -1,0 +1,25 @@
+.closed textarea {
+    height: 38px;
+}
+
+.open textarea {
+    height: 300px;
+}
+
+.closed .feelings {
+    position: absolute;
+    left: 0px;
+    top: 5px;
+    padding-left: 230px;
+}
+
+.open .feelings {
+    position: absolute;
+    left: 0px;
+    top: 270px;
+    padding-left: 10px;
+}
+
+.feelings i {
+    cursor: pointer;
+}

@@ -9,6 +9,7 @@ import { StatusComponent } from './status/status.component';
 import { TopComponent } from './top/top.component';
 import { PostComponent } from './post/post.component';
 import { PostService } from './services/post.service'
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
     { path: '', component: WallComponent },
@@ -28,7 +29,8 @@ const appRoutes: Routes = [
     imports: [
 	BrowserModule,
 	RouterModule.forRoot(appRoutes,{ enableTracing: true } ),
-	BrowserAnimationsModule
+	BrowserAnimationsModule,
+	FormsModule
     ],
     providers: [
 	PostService

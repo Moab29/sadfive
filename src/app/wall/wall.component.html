@@ -1,11 +1,29 @@
-<div class="row">
-    <div class="col-md-3" style="background-color:#D9DBF4;">
+<div class="row" style="padding-top:10px;background-color:#D9DBF4;">
+    <div class="col-md-3">
     	<app-status></app-status>
     </div>
-    <div class="col-md-8" style="background-color:#D9DBF4;">
+    <div class="col-md-8">
+	<div class="row" [ngClass]="getPostState()">
+	    <div class="input-group mb-3">
+		<div class="input-group-prepend">
+		    <span class="input-group-text" id="basic-addon1">
+			<img height="15" width="15" [src]="post.image" class="float-left">
+		    </span>
+		</div>
+		<textarea class="form-control" placeholder="How are you feeling?" aria-label="feeling" aria-describedby="basic-addon1" [(ngModel)]="post.text" [disabled]="postState==0" (keydown.esc)="onCancelPost($event)" (keydown.enter)="onCreatePost($event)"></textarea>
+	    </div>
+	    <div class="feelings">
+		<i class="material-icons" style="color: #b1371b;" (click)="changeSate(1)" *ngIf="postState==0||postState==1">favorite</i>
+		<i class="material-icons" style="color: #888888;" (click)="changeSate(2)" *ngIf="postState==0||postState==2">favorite_border</i>
+		<i class="material-icons" style="color: #f1993c;" (click)="changeSate(3)" *ngIf="postState==0||postState==3">sentiment_very_satisfied</i>
+		<i class="material-icons" style="color: #234357;" (click)="changeSate(4)" *ngIf="postState==0||postState==4">mood_bad</i>
+		<i class="material-icons" style="color: #007bff;" (click)="changeSate(5)" *ngIf="postState==0||postState==5">attach_file</i>
+		<i class="material-icons" style="color: #a780c1;" (click)="changeSate(6)" *ngIf="postState==0||postState==6">create</i>
+	    </div>
+	</div>
 	<app-post *ngFor="let post of posts" [post]="post"></app-post>
     </div>
-    <div class="col-md-2" style="background-color:#D9DBF4;">
+    <div class="col-md-1">
    	<app-top></app-top>
     </div>
 </div>
